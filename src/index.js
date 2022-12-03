@@ -8,18 +8,20 @@ import {
   Routes 
 } from "react-router-dom";
 import { 
-  Footers,
   Generate, 
   History, 
-  Home, 
-  NavigationBar, 
+  Home,  
   Setup
+} from "./pages";
+import { 
+  Footers, 
+  NavigationBar 
 } from "./components";
 
 ReactDOM.render(
   <Router>
     <NavigationBar />
-    <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/generate" element={<Generate />} />
         <Route path="/setup" element={<Setup />} />
