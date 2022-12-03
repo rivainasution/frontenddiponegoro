@@ -14,14 +14,7 @@ import {
 function Home() {
     const [description, setDescription] = useState("");
     const [file, setFile] = useState("");
-    const [preview, setPreview] = useState("");
     const navigate = useNavigate();
-
-    const loadImage = (e) => {
-        const excel = e.target.files[0];
-        setFile(excel);
-        setPreview(URL.createObjectURL(excel));
-    };
 
     const saveFile = async (e) => {
         e.preventDefault();
@@ -45,7 +38,7 @@ function Home() {
             <NavigationBar />
             <Container className="pt-5">
                 <div className="bg-white border border-secondary py-3">
-                    <h1 className="text-center">Home</h1>
+                    <h1 className="text-center">Form Upload</h1>
                     <div className="mx-5">
                         <Form onSubmit={saveFile}>
                             <Form.Group controlId="formFile" className='mb-3'>
