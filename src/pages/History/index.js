@@ -1,21 +1,15 @@
-import Container from "react-bootstrap/esm/Container";
-import { 
-    Footers, 
-    NavigationBar 
-} from "../../components";
+import { Container } from "react-bootstrap";
+import Forms from "../../components/Form";
+import TabHistory from './fragments/';
 
 function History() {
-    return (
-      <div className="text-center mt-5">
-        <NavigationBar />
-        <Container className="pt-5">
-            <div className="bg-white border border-secondary py-3">
-            <h1>History</h1>
-            </div>
-        </Container>
-        <Footers />
-    </div>
-    );
-  }
-  
-  export default History;
+  const title="History";
+
+  return (
+    <Container>
+      <Forms content={<TabHistory title={title} />} />
+    </Container>
+  );
+}
+
+export default History;

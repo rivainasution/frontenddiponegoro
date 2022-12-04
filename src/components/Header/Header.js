@@ -1,13 +1,22 @@
-import Container from 'react-bootstrap/Container';
+import logo from '../../logo.svg';
 import {
+  Container, 
   Nav, 
   Navbar, 
   Offcanvas
 } from 'react-bootstrap';
 
-function NavigationBar() {
-  return (
-    <>
+function Header(prop) {
+  const menu = ["Home", "Setup", "Generate", "History"];
+
+  const navigation = () => {
+    console.log(menu.map);
+    return menu.map((item, idx) => {
+      return <Nav.Link className='navs' onClick={() => prop.onClick(idx+1)} >{item}</Nav.Link>
+    }) 
+  }
+  return(
+    <div>
       {['md'].map((expand) => (
         <Navbar key={expand} bg="dark" variant='dark' expand={expand} className="mb-3" fixed="top" >
           <Container fluid>
@@ -24,19 +33,16 @@ function NavigationBar() {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="justify-content-start">
-                  <Nav.Link href="/" className='navs'>Home</Nav.Link>
-                  <Nav.Link href="/setup" className='navs'>Setup</Nav.Link>
-                  <Nav.Link href="/generate" className='navs'>Generate</Nav.Link>
-                  <Nav.Link href="/history" className='navs'>History</Nav.Link>
+                <Nav className="justify-content-end flex-grow-1 pe-3">
+                  {navigation()}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
         </Navbar>
       ))}
-    </>
+    </div>
   );
 }
 
-export default NavigationBar;
+export default Header;
