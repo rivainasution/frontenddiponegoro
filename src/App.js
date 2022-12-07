@@ -10,14 +10,18 @@ import {
   History
 } from './pages';
 import GeneratedSelected from './pages/GenerateSelected';
+import Login from './pages/Login';
 import NewLogo from './pages/Setup/fragments/NewLogo';
 import NewSetup from './pages/Setup/fragments/NewSetup';
 import SingleGenerated from './pages/SingleGenerate';
+
 function App() {
   const [menu, setMenu] = useState(1);
 
   const content = () => {
-    if (menu === 1) {
+    if (menu === 0){
+      return <Login />
+    } else if (menu === 1) {
       return <Home />
     } else if (menu === 2) {
       return <Setup onClick={setMenu} />
@@ -25,6 +29,8 @@ function App() {
       return <Generate onClick={setMenu} />
     } else if (menu === 4) {
       return <History />
+    } else if (menu === 5) {
+      return <Login />
     } else if (menu === "generate"){
       return <SingleGenerated />
     } else if (menu === "selected"){

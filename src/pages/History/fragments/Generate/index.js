@@ -1,3 +1,5 @@
+import { Button } from "react-bootstrap";
+
 function GenerateHistory(){
     return(
         <>
@@ -7,7 +9,8 @@ function GenerateHistory(){
                 <th>File</th>
                 <th>Name</th>
                 <th>Date From</th>
-                <th>Date To</th>                   
+                <th>Date To</th> 
+                <th>Action</th>                  
             </thead>
             <tbody>
                 <tr>
@@ -17,6 +20,9 @@ function GenerateHistory(){
                     <td>Rahmad</td>
                     <td>2022-12-2</td>
                     <td>2023-1-2</td>
+                    <td>
+                        <Button variant="primary">Download</Button>
+                    </td>
                 </tr>
             </tbody>
         </>
