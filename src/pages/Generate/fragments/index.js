@@ -1,55 +1,30 @@
 import { 
-    Button, 
-    Form,
-    Col,
-    Row 
+    Tabs,
+    Tab 
 } from "react-bootstrap";
-import Buttons from "../../../components/Buttons";
-import Tables from "../../../components/Table";
-import DetailFile from "./Content";
+import MultiFile from "./MultiFile";
+import SingleFile from "./SingleFile";
 
-function FilterData(prop){
+function FilterData({title, onClick}){
     const button="Generate";
 
     return(
         <div className="mx-5">
-            <h3 className="text-center">{prop.title}</h3>
-            <Form>
-                <Row>
-                    <Col lg={4} md={12}>
-                        <Form.Group as={Row} className='mb-3' controlId="formFilterByName">
-                            <Form.Label column sm="6">Filter By Name:</Form.Label>
-                            <Col sm="6">
-                                <Form.Control type="text" placeholder="Name" />
-                            </Col>
-                        </Form.Group>
-                    </Col>
-                    <Col lg={3} md={12}>
-                        <Form.Group as={Row} className='mb-3' controlId="formFilterByDateFrom">
-                            <Form.Label column sm="6">Filter By Date:</Form.Label>
-                            <Col sm="6">
-                                <Form.Control type="date" />
-                            </Col>
-                        </Form.Group>
-                    </Col>
-                    <Col lg={3} md={12}>
-                        <Form.Group as={Row} className='mb-3' controlId="formFilterByDateTo">
-                            <Form.Label column sm="6">to:</Form.Label>
-                            <Col sm="6">
-                                <Form.Control type="date" />
-                            </Col>
-                        </Form.Group>
-                    </Col>
-                    <Col lg={2} md={12}>
-                        <Button>Search</Button>
-                    </Col>
-                </Row>
+            <h3 className="text-center">{title}</h3>
+            <Tabs
+                justify
+                defaultActiveKey="single"
+                className="my-3"
+                fill
+            >
+                <Tab eventKey="single" title="Generate Single File" className='mb-5'>
+                    <SingleFile onClick={onClick} />
+                </Tab>
 
-                <h6 className="my-3">Detail File</h6>
-                <Tables tables={<DetailFile />} />
-
-                <Buttons button={button} />
-            </Form>
+                <Tab eventKey="multi" title="Generate Multi File" className='mb-5'>
+                    <MultiFile onClick={onClick} />
+                </Tab>
+            </Tabs>
         </div>
     );
 }

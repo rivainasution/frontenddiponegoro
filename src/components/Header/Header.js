@@ -1,4 +1,4 @@
-import logo from '../../logo.svg';
+import logo from '../../assets/rapid2.png';
 import {
   Container, 
   Nav, 
@@ -20,8 +20,8 @@ function Header(prop) {
       {['md'].map((expand) => (
         <Navbar key={expand} bg="dark" variant='dark' expand={expand} className="mb-3" fixed="top" >
           <Container fluid>
-            <Navbar.Brand href="#">Rapid Technology</Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+          <img src={logo} alt="logo" class="img-fluid" width= "200" />
+          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}

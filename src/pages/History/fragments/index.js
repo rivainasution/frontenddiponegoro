@@ -15,7 +15,6 @@ function TabHistory(prop){
             <Tabs
                 justify
                 defaultActiveKey="upload"
-                id="fill-tab-example"
                 className="my-3"
                 fill
             >
