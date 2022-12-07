@@ -1,6 +1,3 @@
-export { default as Footers } from "./Footer";
-export { default as Generate } from "./Generate";
-export { default as History } from "./History";
-export { default as Home } from "./Home";
-export { default as NavigationBar } from "./NavigationBar";
-export { default as Setup } from "./Setup";
+export { default as Footers } from "./Footers/Footers";
+export { default as Header } from "./Header/Header";
+export { default as Form } from "./Form/index";
