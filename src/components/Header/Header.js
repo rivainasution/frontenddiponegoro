@@ -20,7 +20,7 @@ function Header(prop) {
       {['md'].map((expand) => (
         <Navbar key={expand} bg="dark" variant='dark' expand={expand} className="mb-3" fixed="top" >
           <Container fluid>
-          <img src={logo} alt="logo" class="img-fluid" width= "200" />
+          <img src={logo} alt="logo" class="img-fluid" width="130" />
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}

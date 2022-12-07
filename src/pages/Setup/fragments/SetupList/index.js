@@ -13,11 +13,11 @@ function SetupList({title, onClick}){
     
     return(
         <div className='text-center bg-light p-3 rounded border'>
-            <h6>{title}</h6>
             <div className='d-flex flex-row justify-content-start'>
                 <Button variant='primary' onClick={handleNewSetup} >Create New Setup</Button>
                 <Button variant='success' className='mx-3' onClick={handleNewLogo} >Create New Logo</Button>
             </div>
+            <h6>{title}</h6>
             <Tables tables={<SetupData onClick={onClick}/>} />
         </div>                  
     );
