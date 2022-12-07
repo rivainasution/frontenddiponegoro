@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap';
 
 function Header(prop) {
-  const menu = ["Home", "Setup", "Generate", "History"];
+  const menu = ["Home", "Setup", "Generate", "History", "Login"];
 
   const navigation = () => {
     console.log(menu.map);
